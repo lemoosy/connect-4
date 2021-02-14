@@ -1,5 +1,5 @@
 
-
+from os import system
 
 
 
@@ -32,7 +32,7 @@ def get_columns():
 
 	return list(map(list, zip(*matrix)))
 		
-def check_win()
+def check_win():
 
 	for line in get_lines() + get_columns():
 
@@ -56,6 +56,20 @@ def check_win()
 				return 2
 
 	return 0
+
+def can_place_piece(column):
+
+	return matrix[0][column] == 0
+
+def place_piece(column, player):
+
+	for line in range(6, -1, -1):
+
+		if matrix[line][column] == 0:
+			matrix[line][column] = player
+			break
+
+
 
 
 
