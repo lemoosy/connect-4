@@ -1,4 +1,3 @@
-
 from os import system
 
 
@@ -30,7 +29,7 @@ def check_win():
 	for line in get_lines() + get_columns():
 
 		player1, player2 = 0, 0
-		
+
 		for case in line:
 
 			if case == 0:
@@ -40,7 +39,7 @@ def check_win():
 				player1 += 1
 
 			if case == 2:
-				player1 += 2
+				player2 += 2
 
 			if player1 == 4:
 				return 1
