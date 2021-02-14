@@ -3,15 +3,8 @@ from os import system
 
 
 
-
 matrix = [[0 for j in range(7)] for k in range(6)]
-
-
-
-matrix[0][2] = 1
-matrix[0][3] = 1
-matrix[0][4] = 1
-
+game_off = False
 
 
 
@@ -63,7 +56,7 @@ def can_place_piece(column):
 
 def place_piece(column, player):
 
-	for line in range(6, -1, -1):
+	for line in range(5, -1, -1):
 
 		if matrix[line][column] == 0:
 			matrix[line][column] = player
@@ -71,7 +64,23 @@ def place_piece(column, player):
 
 
 
+while not(game_off):
+
+	for player in (1, 2):
+
+		while True:
+
+			system('cls')
+			print_matrix()
+			column = int(input('\nEnter a column player{} : '.format(player)))
+	
+			if not(out_of_dimension(0, column)):
+				if can_place_piece(column):
+					
+					place_piece(column, player)
+					game_off = check_win()
+					break
 
 
 
-input()
+input('player {} win !'.format(game_off))
