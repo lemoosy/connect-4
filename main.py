@@ -14,7 +14,7 @@ def print_matrix():
 
 def out_of_dimension(line, column):
 
-	return line < 0 or column < 0 or line >= 7 or column >= 6
+	return line < 0 or column < 0 or line >= 6 or column >= 7
 
 def get_lines():
 
@@ -37,9 +37,11 @@ def check_win():
 
 			if case == 1:
 				player1 += 1
+				player2 = 0
 
 			if case == 2:
-				player2 += 2
+				player1 = 0
+				player2 += 1
 
 			if player1 == 4:
 				return 1
