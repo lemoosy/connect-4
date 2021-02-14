@@ -4,9 +4,8 @@
 
 
 
-
-
 matrix = [[0 for j in range(7)] for k in range(6)]
+
 
 
 matrix[0][2] = 1
@@ -33,8 +32,30 @@ def get_columns():
 
 	return list(map(list, zip(*matrix)))
 		
+def check_win()
 
+	for line in get_lines() + get_columns():
 
+		player1, player2 = 0, 0
+		
+		for case in line:
+
+			if case == 0:
+				player1, player2 = 0, 0
+
+			if case == 1:
+				player1 += 1
+
+			if case == 2:
+				player1 += 2
+
+			if player1 == 4:
+				return 1
+
+			if player2 == 4:
+				return 2
+
+	return 0
 
 
 
