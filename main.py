@@ -69,6 +69,9 @@ while not(game_off):
 
 	for player in (1, 2):
 
+		if game_off:
+			break
+
 		while True:
 
 			system('cls')
